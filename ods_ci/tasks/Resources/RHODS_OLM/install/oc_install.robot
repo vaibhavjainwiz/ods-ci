@@ -293,7 +293,7 @@ Apply DataScienceCluster CustomResource
     END
     Log To Console    Print final DSC
     ${return_code}    ${output} =    Run And Return Rc And Output    oc get datasciencecluster ${dsc_name}  #robocop:disable
-    Log    ${output}
+    Log To Console    output : ${output}
 
 Create DataScienceCluster CustomResource Using Test Variables
     [Documentation]
