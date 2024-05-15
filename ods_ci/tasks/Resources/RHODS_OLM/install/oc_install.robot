@@ -291,6 +291,9 @@ Apply DataScienceCluster CustomResource
             Component Should Not Be Enabled    ${cmp}
         END
     END
+    Log To Console    Print final DSC
+    ${return_code}    ${output} =    Run And Return Rc And Output    oc get datasciencecluster ${dsc_name}  #robocop:disable
+    Log    ${output}
 
 Create DataScienceCluster CustomResource Using Test Variables
     [Documentation]
